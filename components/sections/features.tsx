@@ -1,43 +1,32 @@
 'use client'
 
-import { Camera, Zap, PieChart, Tags, BarChart3 } from 'lucide-react'
+import { Camera, Zap, PieChart, Tags, BarChart3, Check, Sparkles } from 'lucide-react'
 import { useScrollAnimation } from '@/hooks/use-scroll-animation'
 
 const features = [
-  {
-    icon: Camera,
-    title: 'AI Receipt Scanner',
-    description: 'One of the best receipt scanner features in any expense tracker—simply scan and let AI extract amount, date, and category instantly.',
-    accent: 'from-blue-500/20 to-cyan-500/20',
-    size: 'lg',
-  },
   {
     icon: Zap,
     title: 'Smart Expense Tracking',
     description: 'Track your daily spending with a powerful and easy-to-use expense manager built for accuracy and speed.',
     accent: 'from-amber-500/20 to-orange-500/20',
-    size: 'md',
   },
   {
     icon: PieChart,
     title: 'Budget Management',
     description: 'Set budgets and monitor your finances with one of the best budget tracking tools available in a modern expense app.',
     accent: 'from-emerald-500/20 to-teal-500/20',
-    size: 'md',
   },
   {
     icon: Tags,
     title: 'Auto Categorization',
     description: 'Organize expenses into categories, making it easier to understand where your money goes.',
     accent: 'from-purple-500/20 to-indigo-500/20',
-    size: 'md',
   },
   {
     icon: BarChart3,
     title: 'Insights & Reports',
     description: 'Get a clear overview of your spending patterns.',
     accent: 'from-cyan-500/20 to-blue-500/20',
-    size: 'md',
   },
 ]
 
@@ -45,7 +34,7 @@ export default function Features() {
   const { ref, isVisible } = useScrollAnimation()
 
   return (
-    <section ref={ref} id="features" className="py-20 px-4 sm:px-6 lg:px-8 ">
+    <section ref={ref} id="features" className="py-20 px-4 sm:px-6 lg:px-8">
       <div className="max-w-7xl mx-auto">
         {/* Header */}
         <div className={`text-center mb-16 ${isVisible ? 'animate-fade-in-up' : 'opacity-0'}`}>
@@ -63,38 +52,126 @@ export default function Features() {
 
         {/* Features Grid */}
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 auto-rows-max">
+          {/* Large Featured Card - AI Receipt Scanner */}
+          <div
+            className={`md:col-span-2 lg:col-span-2 lg:row-span-2 ${isVisible ? 'animate-slide-in-up' : 'opacity-0'}`}
+          >
+            <div className="relative h-full rounded-2xl border border-border/50 bg-secondary/30 backdrop-blur-sm overflow-hidden group hover-lift transition-smooth hover:border-primary/50">
+              {/* Animated background gradient */}
+              <div className="absolute inset-0 bg-gradient-to-br from-primary/5 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+
+              {/* Content */}
+              <div className="relative p-8 md:p-10 h-full flex flex-col lg:flex-row gap-8">
+                {/* Left side - Text content */}
+                <div className="flex-1 flex flex-col justify-center">
+                  <div className="mb-6 w-16 h-16 rounded-xl bg-primary/10 flex items-center justify-center group-hover:scale-110 group-hover:bg-primary/20 transition-all duration-300">
+                    <Camera className="w-8 h-8 text-primary group-hover:text-primary/80 transition-colors" />
+                  </div>
+                  <h3 className="font-bold text-foreground text-2xl md:text-3xl mb-4">
+                    AI Receipt Scanner
+                  </h3>
+                  <p className="text-foreground/70 leading-relaxed text-lg mb-6">
+                    One of the best receipt scanner features in any expense tracker—simply scan and let AI extract amount, date, and category instantly.
+                  </p>
+                  <div className="space-y-3">
+                    {['99.2% accuracy rate', 'Instant data extraction', 'Multi-currency support'].map((item, i) => (
+                      <div key={i} className="flex items-center gap-3">
+                        <div className="w-5 h-5 rounded-full bg-primary/20 flex items-center justify-center">
+                          <Check className="w-3 h-3 text-primary" />
+                        </div>
+                        <span className="text-foreground/70 text-sm">{item}</span>
+                      </div>
+                    ))}
+                  </div>
+                </div>
+
+                {/* Right side - Visual mockup */}
+                <div className="flex-1 flex items-center justify-center">
+                  <div className="relative w-full max-w-xs">
+                    {/* Receipt mockup */}
+                    <div className="bg-background rounded-xl border border-border p-5 shadow-lg transform rotate-3 group-hover:rotate-0 transition-transform duration-500">
+                      <div className="space-y-4">
+                        <div className="flex items-center justify-between">
+                          <span className="text-xs text-foreground/50">RECEIPT</span>
+                          <Sparkles className="w-4 h-4 text-primary animate-pulse-subtle" />
+                        </div>
+                        <div className="h-px bg-border"></div>
+                        <div className="space-y-2">
+                          <div className="flex justify-between text-sm">
+                            <span className="text-foreground/70">Coffee Shop</span>
+                            <span className="text-foreground font-medium">$4.50</span>
+                          </div>
+                          <div className="flex justify-between text-sm">
+                            <span className="text-foreground/70">Grocery Store</span>
+                            <span className="text-foreground font-medium">$85.20</span>
+                          </div>
+                          <div className="flex justify-between text-sm">
+                            <span className="text-foreground/70">Gas Station</span>
+                            <span className="text-foreground font-medium">$45.00</span>
+                          </div>
+                        </div>
+                        <div className="h-px bg-border"></div>
+                        <div className="flex justify-between text-sm font-semibold">
+                          <span className="text-foreground">Total</span>
+                          <span className="text-primary">$134.70</span>
+                        </div>
+                      </div>
+                    </div>
+
+                    {/* Floating AI badge */}
+                    <div className="absolute -top-3 -right-3 bg-primary text-primary-foreground px-3 py-1.5 rounded-full text-xs font-medium flex items-center gap-1.5 shadow-lg animate-float">
+                      <Sparkles className="w-3 h-3" />
+                      AI Detected
+                    </div>
+
+                    {/* Mini chart */}
+                    <div className="absolute -bottom-4 -left-4 bg-background rounded-lg border border-border p-3 shadow-lg animate-float" style={{ animationDelay: '0.5s' }}>
+                      <div className="flex gap-1 h-10 items-end">
+                        {[40, 65, 45, 80, 55, 70].map((height, i) => (
+                          <div
+                            key={i}
+                            className="w-2 bg-primary/30 rounded-t hover:bg-primary transition-colors"
+                            style={{ height: `${height}%` }}
+                          ></div>
+                        ))}
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              {/* Corner accent */}
+              <div className="absolute top-0 right-0 w-32 h-32 bg-gradient-to-br from-primary/10 to-transparent rounded-full -mr-16 -mt-16 group-hover:scale-150 transition-transform duration-500"></div>
+            </div>
+          </div>
+
+          {/* Other feature cards */}
           {features.map((feature, index) => {
             const Icon = feature.icon
-            const isLarge = feature.size === 'lg'
 
             return (
               <div
                 key={index}
-                className={`${isLarge ? 'md:col-span-2 lg:col-span-2 lg:row-span-2' : ''
-                  } ${isVisible ? 'animate-slide-in-up' : 'opacity-0'}`}
-                style={{ animationDelay: isVisible ? `${index * 75}ms` : '0ms' }}
+                className={`${isVisible ? 'animate-slide-in-up' : 'opacity-0'}`}
+                style={{ animationDelay: isVisible ? `${(index + 1) * 75}ms` : '0ms' }}
               >
-                <div
-                  className={`relative h-full rounded-2xl border border-border/50 bg-secondary/30 backdrop-blur-sm overflow-hidden group hover-lift transition-smooth hover:border-primary/50`}
-                >
+                <div className="relative h-full rounded-2xl border border-border/50 bg-secondary/30 backdrop-blur-sm overflow-hidden group hover-lift transition-smooth hover:border-primary/50">
                   {/* Animated background gradient */}
                   <div className="absolute inset-0 bg-gradient-to-br from-primary/5 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
 
                   {/* Content */}
-                  <div className={`relative ${isLarge ? 'p-8 md:p-12' : 'p-6 md:p-8'}`}>
+                  <div className="relative p-6 md:p-8">
                     {/* Icon Background */}
-                    <div className={`mb-6 ${isLarge ? 'w-16 h-16' : 'w-12 h-12'} rounded-xl bg-primary/10 flex items-center justify-center group-hover:scale-110 group-hover:bg-primary/20 transition-all duration-300`}>
-                      <Icon
-                        className={`${isLarge ? 'w-8 h-8' : 'w-6 h-6'} text-primary group-hover:text-primary/80 transition-colors`}
-                      />
+                    <div className="mb-6 w-12 h-12 rounded-xl bg-primary/10 flex items-center justify-center group-hover:scale-110 group-hover:bg-primary/20 transition-all duration-300">
+                      <Icon className="w-6 h-6 text-primary group-hover:text-primary/80 transition-colors" />
                     </div>
 
                     {/* Title and Description */}
                     <div className="space-y-3">
-                      <h3 className={`font-bold text-foreground ${isLarge ? 'text-2xl md:text-3xl' : 'text-lg md:text-xl'}`}>
+                      <h3 className="font-bold text-foreground text-lg md:text-xl">
                         {feature.title}
                       </h3>
-                      <p className={`text-foreground/70 leading-relaxed ${isLarge ? 'text-lg' : 'text-sm md:text-base'}`}>
+                      <p className="text-foreground/70 leading-relaxed text-sm md:text-base">
                         {feature.description}
                       </p>
                     </div>
