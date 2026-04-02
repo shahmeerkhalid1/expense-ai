@@ -45,7 +45,7 @@ export default function Features() {
   const { ref, isVisible } = useScrollAnimation()
 
   return (
-    <section ref={ref} id="features" className="py-20 px-4 sm:px-6 lg:px-8 bg-secondary/30">
+    <section ref={ref} id="features" className="py-20 px-4 sm:px-6 lg:px-8 ">
       <div className="max-w-7xl mx-auto">
         {/* Header */}
         <div className={`text-center mb-16 ${isVisible ? 'animate-fade-in-up' : 'opacity-0'}`}>
@@ -70,13 +70,12 @@ export default function Features() {
             return (
               <div
                 key={index}
-                className={`${
-                  isLarge ? 'md:col-span-2 lg:col-span-2 lg:row-span-2' : ''
-                } ${isVisible ? 'animate-slide-in-up' : 'opacity-0'}`}
+                className={`${isLarge ? 'md:col-span-2 lg:col-span-2 lg:row-span-2' : ''
+                  } ${isVisible ? 'animate-slide-in-up' : 'opacity-0'}`}
                 style={{ animationDelay: isVisible ? `${index * 75}ms` : '0ms' }}
               >
                 <div
-                  className={`relative h-full rounded-2xl border border-border/50 bg-gradient-to-br ${feature.accent} backdrop-blur-sm overflow-hidden group hover-lift transition-smooth hover:border-primary/50`}
+                  className={`relative h-full rounded-2xl border border-border/50 bg-secondary/30 backdrop-blur-sm overflow-hidden group hover-lift transition-smooth hover:border-primary/50`}
                 >
                   {/* Animated background gradient */}
                   <div className="absolute inset-0 bg-gradient-to-br from-primary/5 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
