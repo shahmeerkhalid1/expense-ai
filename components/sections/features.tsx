@@ -1,48 +1,41 @@
 'use client'
 
-import { Camera, Zap, PieChart, Lock, TrendingDown, Smartphone } from 'lucide-react'
+import { Camera, Zap, PieChart, Tags, BarChart3 } from 'lucide-react'
 import { useScrollAnimation } from '@/hooks/use-scroll-animation'
 
 const features = [
   {
     icon: Camera,
     title: 'AI Receipt Scanner',
-    description: 'Simply scan and let AI extract amount, date, and category instantly with 99.2% accuracy.',
+    description: 'One of the best receipt scanner features in any expense tracker—simply scan and let AI extract amount, date, and category instantly.',
     accent: 'from-blue-500/20 to-cyan-500/20',
     size: 'lg',
   },
   {
     icon: Zap,
-    title: 'Smart Categorization',
-    description: 'Automatic expense organization into 20+ intelligent categories that learn from your habits.',
+    title: 'Smart Expense Tracking',
+    description: 'Track your daily spending with a powerful and easy-to-use expense manager built for accuracy and speed.',
     accent: 'from-amber-500/20 to-orange-500/20',
     size: 'md',
   },
   {
     icon: PieChart,
-    title: 'Real-Time Insights',
-    description: 'Beautiful charts and analytics showing exactly where your money goes each month.',
+    title: 'Budget Management',
+    description: 'Set budgets and monitor your finances with one of the best budget tracking tools available in a modern expense app.',
     accent: 'from-emerald-500/20 to-teal-500/20',
     size: 'md',
   },
   {
-    icon: Lock,
-    title: 'Bank-Level Security',
-    description: 'End-to-end encryption and privacy-first design. Your financial data is always protected.',
-    accent: 'from-red-500/20 to-pink-500/20',
-    size: 'md',
-  },
-  {
-    icon: TrendingDown,
-    title: 'Budget Management',
-    description: 'Set smart budgets and get alerts before you overspend on any category.',
+    icon: Tags,
+    title: 'Auto Categorization',
+    description: 'Organize expenses into categories, making it easier to understand where your money goes.',
     accent: 'from-purple-500/20 to-indigo-500/20',
     size: 'md',
   },
   {
-    icon: Smartphone,
-    title: 'Multi-Device Sync',
-    description: 'Access your expenses seamlessly across iOS, Android, web, and desktop apps.',
+    icon: BarChart3,
+    title: 'Insights & Reports',
+    description: 'Get a clear overview of your spending patterns.',
     accent: 'from-cyan-500/20 to-blue-500/20',
     size: 'md',
   },
@@ -52,7 +45,7 @@ export default function Features() {
   const { ref, isVisible } = useScrollAnimation()
 
   return (
-    <section ref={ref} id="features" className="py-20 px-4 sm:px-6 lg:px-8">
+    <section ref={ref} id="features" className="py-20 px-4 sm:px-6 lg:px-8 bg-secondary/30">
       <div className="max-w-7xl mx-auto">
         {/* Header */}
         <div className={`text-center mb-16 ${isVisible ? 'animate-fade-in-up' : 'opacity-0'}`}>

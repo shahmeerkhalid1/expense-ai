@@ -1,13 +1,18 @@
 'use client'
 
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 import { Menu, X, Moon, Sun } from 'lucide-react'
 import { useTheme } from 'next-themes'
 import { Button } from '@/components/ui/button'
 
 export default function Header() {
   const [isOpen, setIsOpen] = useState(false)
+  const [mounted, setMounted] = useState(false)
   const { theme, setTheme } = useTheme()
+
+  useEffect(() => {
+    setMounted(true)
+  }, [])
 
   const navLinks = [
     { label: 'Features', href: '#features' },
@@ -56,10 +61,14 @@ export default function Header() {
               className="p-2 hover:bg-secondary rounded-lg transition-colors hover-scale"
               aria-label="Toggle theme"
             >
-              {theme === 'dark' ? (
-                <Sun className="w-5 h-5 text-foreground" />
+              {mounted ? (
+                theme === 'dark' ? (
+                  <Sun className="w-5 h-5 text-foreground" />
+                ) : (
+                  <Moon className="w-5 h-5 text-foreground" />
+                )
               ) : (
-                <Moon className="w-5 h-5 text-foreground" />
+                <div className="w-5 h-5" />
               )}
             </button>
 
