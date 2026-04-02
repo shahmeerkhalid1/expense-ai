@@ -61,11 +61,15 @@ export default function Header() {
               className="p-2 hover:bg-secondary rounded-lg transition-colors hover-scale"
               aria-label="Toggle theme"
             >
-              {mounted && (theme === 'dark' ? (
-                <Sun className="w-5 h-5 text-foreground" />
+              {mounted ? (
+                theme === 'dark' ? (
+                  <Sun className="w-5 h-5 text-foreground" />
+                ) : (
+                  <Moon className="w-5 h-5 text-foreground" />
+                )
               ) : (
-                <Moon className="w-5 h-5 text-foreground" />
-              ))}
+                <div className="w-5 h-5" />
+              )}
             </button>
 
             {/* Mobile Menu Button */}
