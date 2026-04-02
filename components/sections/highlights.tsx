@@ -31,7 +31,7 @@ export default function Highlights() {
   const { ref, isVisible } = useScrollAnimation()
 
   return (
-    <section ref={ref} className="py-20 px-4 sm:px-6 lg:px-8 bg-secondary/30">
+    <section ref={ref} className="py-20 px-4 sm:px-6 lg:px-8 ">
       <div className="max-w-7xl mx-auto">
         <div className={`text-center mb-16 ${isVisible ? 'animate-fade-in-up' : 'opacity-0'}`}>
           <h2 className="text-4xl font-bold text-foreground mb-4">Key Features at a Glance</h2>
@@ -49,8 +49,8 @@ export default function Highlights() {
                 className={`${isVisible ? 'animate-slide-in-up' : 'opacity-0'}`}
                 style={{ animationDelay: isVisible ? `${index * 100}ms` : '0ms' }}
               >
-                <Card className="p-8 bg-background border-border hover:shadow-lg hover-lift transition-smooth group h-full">
-                  <div className="mb-4 p-3 bg-primary/10 rounded-lg w-fit group-hover:bg-primary/20 transition-colors">
+                <Card className="p-8 bg-background border-border hover:shadow-lg hover-lift transition-smooth group h-full ">
+                  <div className="mb-4 p-3  rounded-lg w-fit ">
                     <Icon className="w-6 h-6 text-primary group-hover:scale-110 transition-transform" />
                   </div>
                   <h3 className="text-lg font-bold text-foreground mb-2">{feature.title}</h3>
