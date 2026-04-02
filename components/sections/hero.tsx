@@ -30,20 +30,19 @@ export default function Hero() {
             <div className="space-y-6 animate-fade-in-left">
               <div className="inline-flex items-center gap-2 bg-primary/10 border border-primary/20 px-4 py-2 rounded-full animate-slide-in-down">
                 <Sparkles className="w-4 h-4 text-primary animate-pulse-subtle" />
-                <span className="text-sm font-medium text-primary">AI-Powered Finance</span>
+                <span className="text-sm font-medium text-primary">Best Expense Manager with AI Receipt Scanner</span>
               </div>
               <h1 className="text-5xl lg:text-7xl font-bold text-balance text-foreground leading-[1.1]">
-                Your Money,{' '}
+                AI Expense{' '}
                 <span className="relative">
-                  <span className="text-primary">Automatically</span>
+                  <span className="text-primary">Notebook</span>
                   <svg className="absolute -bottom-2 left-0 w-full" viewBox="0 0 200 12" fill="none">
                     <path d="M2 10C50 4 150 4 198 10" stroke="currentColor" strokeWidth="3" strokeLinecap="round" className="text-primary/40" />
                   </svg>
-                </span>{' '}
-                Managed
+                </span>
               </h1>
               <p className="text-xl text-foreground/70 text-balance leading-relaxed max-w-lg animate-fade-in-up">
-                Scan receipts with AI, track expenses effortlessly, and get actionable insights about where your money goes.
+                Track daily expenses, manage budgets, and scan receipts instantly using AI.
               </p>
             </div>
 
