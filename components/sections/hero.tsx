@@ -5,6 +5,7 @@ import { Button } from '@/components/ui/button'
 import { ArrowRight, Camera, Sparkles, TrendingUp, Shield } from 'lucide-react'
 import Image from 'next/image'
 
+// Hero section component
 export default function Hero() {
   const [activeFeature, setActiveFeature] = useState(0)
 
@@ -19,6 +20,8 @@ export default function Hero() {
     <section className="relative pt-24 pb-32 px-4 sm:px-6 lg:px-8 overflow-hidden">
       {/* Animated background elements */}
       <div className="absolute inset-0 overflow-hidden pointer-events-none">
+        {/* Solid circle on the left */}
+        <div className="absolute top-1/2 -left-32 lg:-left-20 -translate-y-1/2 w-64 h-64 lg:w-80 lg:h-80 bg-primary rounded-full opacity-90"></div>
         <div className="absolute top-20 left-10 w-72 h-72 bg-primary/10 rounded-full blur-3xl animate-float"></div>
         <div className="absolute bottom-20 right-10 w-96 h-96 bg-primary/5 rounded-full blur-3xl animate-float" style={{ animationDelay: '1s' }}></div>
         <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] bg-gradient-radial from-primary/5 to-transparent rounded-full"></div>
