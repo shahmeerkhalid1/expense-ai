@@ -8,8 +8,8 @@ const _geist = Geist({ subsets: ["latin"] });
 const _geistMono = Geist_Mono({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
-  title: 'AI Expense Notebook - Smart Receipt Scanning & Expense Tracking',
-  description: 'AI-powered expense tracker that scans receipts, tracks spending, and provides insights. Manage budgets with AI categorization.',
+  title: 'AI Expense Notebook – Best Expense Manager with AI Receipt Scanner',
+  description: 'Track daily expenses, manage budgets, and scan receipts instantly using AI.',
   generator: 'v0.app',
   icons: {
     icon: [

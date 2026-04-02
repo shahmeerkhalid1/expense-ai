@@ -37,7 +37,7 @@ export default function Header() {
             <div className="w-8 h-8 bg-primary rounded-lg flex items-center justify-center transition-transform hover:glow-primary">
               <span className="text-white font-bold text-lg">E</span>
             </div>
-            <span className="hidden sm:inline font-bold text-lg text-foreground">AI Expense</span>
+            <span className="hidden sm:inline font-bold text-lg text-foreground">AI Expense Notebook</span>
           </div>
 
           {/* Desktop Navigation */}
