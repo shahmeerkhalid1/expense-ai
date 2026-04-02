@@ -2,7 +2,8 @@
 
 import { useState } from 'react'
 import { Button } from '@/components/ui/button'
-import { ArrowRight, Camera, Sparkles, Receipt, TrendingUp, Shield } from 'lucide-react'
+import { ArrowRight, Camera, Sparkles, TrendingUp, Shield } from 'lucide-react'
+import Image from 'next/image'
 
 export default function Hero() {
   const [activeFeature, setActiveFeature] = useState(0)
@@ -92,85 +93,42 @@ export default function Hero() {
             </div>
           </div>
 
-          {/* Right - Interactive App Preview */}
+          {/* Right - App Screenshots */}
           <div className="relative h-[600px] flex items-center justify-center animate-fade-in-right">
-            {/* Main phone mockup */}
-            <div className="relative">
+            <div className="relative w-full max-w-md">
               {/* Glow effect */}
-              <div className="absolute -inset-4 bg-gradient-to-r from-primary/20 via-primary/10 to-primary/20 rounded-[3rem] blur-2xl animate-pulse-subtle"></div>
+              <div className="absolute inset-0 bg-gradient-to-r from-primary/20 via-primary/10 to-primary/20 rounded-[3rem] blur-3xl animate-pulse-subtle"></div>
               
-              {/* Phone frame */}
-              <div className="relative w-72 h-[580px] bg-gradient-to-b from-foreground/10 to-foreground/5 rounded-[3rem] p-2 border border-border/50 shadow-2xl">
-                <div className="w-full h-full bg-background rounded-[2.5rem] overflow-hidden">
-                  {/* Phone notch */}
-                  <div className="flex justify-center pt-2">
-                    <div className="w-24 h-6 bg-foreground/10 rounded-full"></div>
-                  </div>
-                  
-                  {/* App content */}
-                  <div className="p-6 space-y-6">
-                    {/* Header */}
-                    <div className="flex items-center justify-between">
-                      <div>
-                        <p className="text-sm text-foreground/60">Total Balance</p>
-                        <p className="text-2xl font-bold text-foreground">$12,450.00</p>
-                      </div>
-                      <div className="w-10 h-10 bg-primary/10 rounded-full flex items-center justify-center">
-                        <Receipt className="w-5 h-5 text-primary" />
-                      </div>
-                    </div>
+              {/* Back image - AI Magic Scan (slightly hidden behind) */}
+              <div className="absolute top-8 -left-4 lg:left-0 w-56 sm:w-64 transform -rotate-6 opacity-80 hover:opacity-100 hover:-rotate-3 transition-all duration-500 z-10">
+                <div className="relative rounded-[2rem] overflow-hidden shadow-2xl border border-border/30">
+                  <Image
+                    src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Group%20427322608-kk57fjz4ohUbvApexmnF1jYy5qsKrK.png"
+                    alt="AI Magic Scan - Receipt scanning feature"
+                    width={384}
+                    height={832}
+                    className="w-full h-auto"
+                    priority
+                  />
+                </div>
+              </div>
 
-                    {/* Spending card */}
-                    <div className="bg-primary/10 rounded-2xl p-4 border border-primary/20">
-                      <div className="flex items-center justify-between mb-3">
-                        <span className="text-sm font-medium text-foreground">This Month</span>
-                        <span className="text-xs text-primary bg-primary/20 px-2 py-1 rounded-full">-12%</span>
-                      </div>
-                      <div className="flex gap-1 h-16 items-end">
-                        {[40, 65, 45, 80, 55, 70, 50].map((height, i) => (
-                          <div
-                            key={i}
-                            className="flex-1 bg-primary/30 rounded-t transition-all duration-500 hover:bg-primary"
-                            style={{ height: `${height}%`, animationDelay: `${i * 100}ms` }}
-                          ></div>
-                        ))}
-                      </div>
-                    </div>
-
-                    {/* Recent transactions */}
-                    <div className="space-y-3">
-                      <p className="text-sm font-medium text-foreground/60">Recent</p>
-                      {[
-                        { name: 'Grocery Store', amount: '-$85.20', icon: '🛒' },
-                        { name: 'Coffee Shop', amount: '-$4.50', icon: '☕' },
-                        { name: 'Salary', amount: '+$3,200', icon: '💰', positive: true },
-                      ].map((item, i) => (
-                        <div
-                          key={i}
-                          className="flex items-center justify-between p-3 bg-secondary/30 rounded-xl hover:bg-secondary/50 transition-colors cursor-pointer"
-                        >
-                          <div className="flex items-center gap-3">
-                            <span className="text-lg">{item.icon}</span>
-                            <span className="text-sm font-medium text-foreground">{item.name}</span>
-                          </div>
-                          <span className={`text-sm font-semibold ${item.positive ? 'text-green-500' : 'text-foreground'}`}>
-                            {item.amount}
-                          </span>
-                        </div>
-                      ))}
-                    </div>
-
-                    {/* Scan button */}
-                    <button className="w-full py-3 bg-primary text-primary-foreground rounded-xl font-medium flex items-center justify-center gap-2 hover:bg-primary/90 transition-colors">
-                      <Camera className="w-5 h-5" />
-                      Scan Receipt
-                    </button>
-                  </div>
+              {/* Front image - Analytics Dashboard (on top) */}
+              <div className="relative w-56 sm:w-64 ml-auto mr-4 lg:mr-8 transform rotate-3 hover:rotate-0 transition-all duration-500 z-20 hover:scale-105">
+                <div className="relative rounded-[2rem] overflow-hidden shadow-2xl border border-border/30">
+                  <Image
+                    src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Group%20427322551-Q9EgVsjwwGDxSr79MZzm2yxCFJYbnJ.png"
+                    alt="Expense Analytics - Track your spending"
+                    width={384}
+                    height={832}
+                    className="w-full h-auto"
+                    priority
+                  />
                 </div>
               </div>
 
               {/* Floating elements */}
-              <div className="absolute -left-16 top-20 bg-background border border-border rounded-xl p-3 shadow-lg animate-float">
+              <div className="absolute -left-8 lg:-left-16 top-1/4 bg-background border border-border rounded-xl p-3 shadow-lg animate-float z-30">
                 <div className="flex items-center gap-2">
                   <div className="w-8 h-8 bg-green-500/20 rounded-full flex items-center justify-center">
                     <TrendingUp className="w-4 h-4 text-green-500" />
@@ -182,7 +140,7 @@ export default function Hero() {
                 </div>
               </div>
 
-              <div className="absolute -right-12 bottom-32 bg-background border border-border rounded-xl p-3 shadow-lg animate-float" style={{ animationDelay: '0.5s' }}>
+              <div className="absolute -right-4 lg:-right-12 bottom-1/4 bg-background border border-border rounded-xl p-3 shadow-lg animate-float z-30" style={{ animationDelay: '0.5s' }}>
                 <div className="flex items-center gap-2">
                   <Sparkles className="w-5 h-5 text-primary" />
                   <span className="text-sm font-medium text-foreground">AI Detected</span>
